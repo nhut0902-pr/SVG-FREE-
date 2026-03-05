@@ -9,21 +9,60 @@
 <body>
     <div class="container">
         <header>
-            <h1>SVG Finder</h1>
-            <p>Tìm kiếm và sao chép URL của hàng ngàn mẫu SVG miễn phí</p>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm (vd: home, user, heart)...">
-                <button id="searchBtn">Tìm kiếm</button>
-            </div>
+            <h1>SVG & Code Hub</h1>
+            <p>Khám phá SVG và các đoạn mã HTML/CSS hữu ích</p>
+
+            <nav class="tabs">
+                <button class="tab-btn active" data-tab="svg-tab">Tìm SVG</button>
+                <button class="tab-btn" data-tab="code-tab">Code Snippets</button>
+            </nav>
         </header>
 
         <main>
-            <div id="resultsGrid" class="results-grid">
-                <!-- SVG items will be rendered here -->
-            </div>
-            <div id="loading" class="hidden">Đang tải...</div>
-            <div id="noResults" class="hidden">Không tìm thấy mẫu SVG nào.</div>
+            <!-- SVG Tab Content -->
+            <section id="svg-tab" class="tab-content">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm (vd: home, user, heart)...">
+                    <button id="searchBtn">Tìm kiếm</button>
+                </div>
+                <div id="resultsGrid" class="results-grid">
+                    <!-- SVG items will be rendered here -->
+                </div>
+                <div id="loading" class="hidden">Đang tải...</div>
+                <div id="noResults" class="hidden">Không tìm thấy mẫu SVG nào.</div>
+            </section>
+
+            <!-- Code Snippets Tab Content -->
+            <section id="code-tab" class="tab-content hidden">
+                <div class="filter-box">
+                    <button class="filter-btn active" data-filter="all">Tất cả</button>
+                    <button class="filter-btn" data-filter="loading">Loading</button>
+                    <button class="filter-btn" data-filter="404">Trang 404</button>
+                    <button class="filter-btn" data-filter="button">Nút (Button)</button>
+                </div>
+                <div id="snippetsGrid" class="results-grid">
+                    <!-- Snippets will be rendered here -->
+                </div>
+            </section>
         </main>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Xem trước</h2>
+            <div id="previewContainer"></div>
+            <div class="code-output">
+                <h3>HTML</h3>
+                <pre><code id="htmlCode"></code></pre>
+                <button class="copy-code-btn" data-type="html">Sao chép HTML</button>
+
+                <h3>CSS</h3>
+                <pre><code id="cssCode"></code></pre>
+                <button class="copy-code-btn" data-type="css">Sao chép CSS</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
