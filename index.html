@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Finder - Tìm kiếm mẫu SVG miễn phí</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SVG Finder</h1>
+            <p>Tìm kiếm và sao chép URL của hàng ngàn mẫu SVG miễn phí</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm (vd: home, user, heart)...">
+                <button id="searchBtn">Tìm kiếm</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="resultsGrid" class="results-grid">
+                <!-- SVG items will be rendered here -->
+            </div>
+            <div id="loading" class="hidden">Đang tải...</div>
+            <div id="noResults" class="hidden">Không tìm thấy mẫu SVG nào.</div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
